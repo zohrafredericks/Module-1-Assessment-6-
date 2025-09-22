@@ -1,26 +1,33 @@
 
-
-.contact-hover {
-    color: #ff6f00;
-    cursor: pointer;
-    position: relative;
+.about-section, .contact-section {
+  background-color: #fff3e0;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 1.1em;
 }
 
-.contact-hover::after {
-    content: "Contact: +014 958 6541 | Email: sneakertown@gmail.com";
-    position: absolute;
-    left: 0;
-    bottom: -30px;
-    background-color: #fff3e0;
-    color: #e65100;
-    padding: 8px 12px;
-    border-radius: 6px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+.about-section a.contact-link {
+  color: #e65100;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.contact-hover:hover::after {
-    opacity: 1;
+.about-section a.contact-link:hover {
+  text-shadow: 0 0 6px #ff6f00;
+}
+
+.contact-section a {
+  color: #e65100;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-section a:hover {
+  text-shadow: 0 0 6px #ff6f00;
 }
