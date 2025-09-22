@@ -1,4 +1,142 @@
+/* === GENERAL STYLING === */
+body {
+  background-color: #fff8f0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* === HEADER === */
+header {
+  background-color: #e65100;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  color: #ff6f00;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-shadow: 0 0 8px #ff6f00;
+}
+
+/* === INTRO TEXT === */
+.intro {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* === PRODUCT GRID === */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* === PRODUCT CARD === */
+.product-card {
+  background-color: #fff3e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 80%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+}
+
+.product-card .price {
+  font-weight: 600;
+  color: #e65100;
+}
+
+/* === PRODUCT PAGE IMAGES === */
+.product-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.product-images img {
+  width: 30%;
+  border-radius: 8px;
+}
+
+/* === PRODUCT TABLES === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th {
+  background-color: #ffe0b2;
+  border: 1px solid #ffcc80;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #ffcc80;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #fff3e0;
+}
+
+/* === BUTTONS === */
+button {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #e65100;
+  transform: scale(1.05);
+}
+
+/* === ABOUT & CONTACT SECTIONS === */
 .about-section, .contact-section {
   background-color: #fff3e0;
   padding: 30px;
@@ -10,17 +148,7 @@
   font-size: 1.1em;
 }
 
-.about-section a.contact-link {
-  color: #e65100;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.about-section a.contact-link:hover {
-  text-shadow: 0 0 6px #ff6f00;
-}
-
+.about-section a.contact-link,
 .contact-section a {
   color: #e65100;
   font-weight: 600;
@@ -28,6 +156,15 @@
   transition: 0.3s;
 }
 
+.about-section a.contact-link:hover,
 .contact-section a:hover {
   text-shadow: 0 0 6px #ff6f00;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #e65100;
+  text-align: center;
+  padding: 10px;
+  color: white;
 }
