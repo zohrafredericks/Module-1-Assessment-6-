@@ -4,15 +4,16 @@
 
 
 
-
-
-
+/* =======================
+   Import Google Font
+======================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* =======================
    General Styles
 ======================= */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff8f0;
@@ -29,13 +30,12 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.8em;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 header p {
     margin: 5px 0 0 0;
-    font-size: 1.2em;
-    color: #fffbe6;
 }
 
 /* =======================
@@ -51,14 +51,18 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0 15px;
     padding: 5px 10px;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
 }
 
-nav a:hover,
+nav a:hover {
+    background-color: #fff3e0;
+    color: #ff6f00;
+}
+
 nav a.active {
     background-color: #fff3e0;
     color: #ff6f00;
@@ -70,13 +74,13 @@ nav a.active {
 .sneaker-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 20px;
     padding: 20px;
     justify-items: center;
 }
 
 /* =======================
-   Sneaker Block & Hover Effect
+   Sneaker Block & Hover Effects
 ======================= */
 .sneaker-block {
     text-align: center;
@@ -84,22 +88,26 @@ nav a.active {
     transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none;
     color: inherit;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
 }
 
 .sneaker-block:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 /* =======================
-   Fix all images & hover effect
+   Sneaker Image Container
 ======================= */
 .sneaker-image-container {
     width: 250px;
     height: 250px;
     position: relative;
     overflow: hidden;
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 15px;
 }
 
 .sneaker-image-container img {
@@ -109,17 +117,17 @@ nav a.active {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 20px;
-    transition: transform 0.3s, opacity 0.5s ease-in-out;
+    border-radius: 15px;
+    transition: opacity 0.5s ease-in-out, transform 0.3s;
 }
 
-/* Hide side and top images initially for product pages */
+/* Initially hide side and top images */
 .sneaker-image-container img:nth-child(2),
 .sneaker-image-container img:nth-child(3) {
     opacity: 0;
 }
 
-/* Hover effects for product pages */
+/* Hover effect to reveal side image first, then top image on block hover */
 .sneaker-image-container:hover img:nth-child(1) {
     opacity: 0;
 }
@@ -132,17 +140,14 @@ nav a.active {
     opacity: 1;
 }
 
-/* Sneaker description text */
+/* =======================
+   Sneaker Description
+======================= */
 .sneaker-description {
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.2em;
     color: #ff6f00;
-    transition: color 0.3s;
-}
-
-.sneaker-block:hover .sneaker-description {
-    color: #ff3d00;
 }
 
 /* =======================
@@ -160,24 +165,34 @@ nav a.active {
     max-width: 600px;
     text-align: center;
     font-size: 1.1em;
+    color: #333;
 }
 
-/* Product info table */
-.product-description table {
+.product-description p {
+    margin-bottom: 15px;
+}
+
+/* =======================
+   Product Table
+======================= */
+table {
     width: 100%;
-    margin-top: 10px;
     border-collapse: collapse;
+    margin-bottom: 15px;
 }
 
-.product-description th,
-.product-description td {
-    padding: 8px 12px;
+table, th, td {
     border: 1px solid #ff8f00;
 }
 
-.product-description th {
+th {
     background-color: #fff3e0;
-    color: #ff6f00;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    padding: 8px;
 }
 
 /* =======================
@@ -241,8 +256,6 @@ footer {
         width: 150px !important;
         height: 150px !important;
     }
-
-    .sneaker-description {
-        font-size: 1em;
-    }
 }
+
+
