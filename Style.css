@@ -13,6 +13,7 @@
 
 
 
+
 /* =========================
    GENERAL STYLES
 ========================= */
@@ -101,7 +102,7 @@ button:hover, .btn:hover {
 }
 
 /* =========================
-   SNEAKER IMAGES
+   SNEAKER IMAGES (FRONT, SIDE, TOP)
 ========================= */
 .sneaker-image-container img {
     width: 100%;
@@ -114,6 +115,27 @@ button:hover, .btn:hover {
     transition: opacity 0.3s ease;
 }
 
+/* Front image visible by default */
+.sneaker-image-container .main-img {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Side / top images hidden initially */
+.sneaker-image-container .hover-img {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* On hover: front fades out, side/top fades in */
+.sneaker-image-container:hover .main-img {
+    opacity: 0;
+}
+
+.sneaker-image-container:hover .hover-img {
+    opacity: 1;
+}
+
 /* =========================
    SNEAKER NAMES
 ========================= */
@@ -122,6 +144,26 @@ button:hover, .btn:hover {
     margin-top: 10px;
     font-weight: 600;
     color: #333;
+}
+
+/* =========================
+   SNEAKER DESCRIPTIONS
+========================= */
+.sneaker-description {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* =========================
+   SNEAKER STOCK
+========================= */
+.sneaker-stock {
+    text-align: center;
+    font-size: 13px;
+    color: #ff6600;
+    font-weight: 600;
 }
 
 /* =========================
@@ -154,4 +196,11 @@ table tr:nth-child(even) {
    LINKS
 ========================= */
 a {
-    color:
+    color: #ff6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff8533;
+}
