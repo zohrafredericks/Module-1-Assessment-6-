@@ -1,272 +1,138 @@
 
   
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;600&display=swap');
 
-
-
-
-/* =======================
-   Import Google Font
-======================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-
-
-
-
-
-
-/* =======================
-   Import Google Font
-======================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* =======================
-   General Styles
-======================= */
+/* General reset */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff8f0;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Header */
 header {
-    text-align: center;
-    padding: 20px;
-    background-color: #ff6f00;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background: #ff6f00;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-header p {
-    margin: 5px 0 0 0;
-}
-
-/* =======================
-   Navigation Bar
-======================= */
+/* Navigation */
 nav {
-    display: flex;
-    justify-content: center;
-    background-color: #ff8f00;
-    padding: 10px 0;
+  background: #e65100;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 15px;
-    padding: 5px 10px;
-    transition: background-color 0.3s, color 0.3s;
-    border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-    background-color: #fff3e0;
-    color: #ff6f00;
+  color: #ffd54f;
 }
 
-nav a.active {
-    background-color: #fff3e0;
-    color: #ff6f00;
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 30px;
 }
 
-/* =======================
-   Sneaker Grid
-======================= */
-.sneaker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
+/* Product card */
+.product-card {
+  background: #fff3e0;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* =======================
-   Sneaker Block & Hover Effects
-======================= */
-.sneaker-block {
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #fff;
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-.sneaker-block:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+/* Sneaker images */
+.product-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* =======================
-   Sneaker Image Container
-======================= */
-.sneaker-image-container {
-    width: 250px;
-    height: 250px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
+.product-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 
-.sneaker-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 15px;
-    transition: opacity 0.5s ease-in-out, transform 0.3s;
+/* Sneaker names */
+.product-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  margin: 15px 0 8px;
+  transition: color 0.3s;
 }
 
-/* Initially hide side and top images */
-.sneaker-image-container img:nth-child(2),
-.sneaker-image-container img:nth-child(3) {
-    opacity: 0;
+.product-card h2:hover {
+  color: #ff6f00;
 }
 
-/* Hover effect to reveal side image first, then top image on block hover */
-.sneaker-image-container:hover img:nth-child(1) {
-    opacity: 0;
+/* Product table */
+.product-info {
+  margin-top: 12px;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.sneaker-image-container:hover img:nth-child(2) {
-    opacity: 1;
+.product-info th,
+.product-info td {
+  border: 1px solid #ffcc80;
+  padding: 8px;
+  font-size: 0.9rem;
 }
 
-.sneaker-block:hover img:nth-child(3) {
-    opacity: 1;
+.product-info th {
+  background: #ffe0b2;
+  font-weight: 600;
 }
 
-/* =======================
-   Sneaker Description
-======================= */
-.sneaker-description {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1.2em;
-    color: #ff6f00;
-}
-
-/* =======================
-   Product Page
-======================= */
-.product-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.product-description {
-    max-width: 600px;
-    text-align: center;
-    font-size: 1.1em;
-    color: #333;
-}
-
-.product-description p {
-    margin-bottom: 15px;
-}
-
-/* =======================
-   Product Table
-======================= */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 15px;
-}
-
-table, th, td {
-    border: 1px solid #ff8f00;
-}
-
-th {
-    background-color: #fff3e0;
-    padding: 8px;
-    text-align: left;
-}
-
-td {
-    padding: 8px;
-}
-
-/* =======================
-   Buy Now Button
-======================= */
-.buy-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #ff6f00;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.buy-button:hover {
-    background-color: #ff8f00;
-    transform: scale(1.05);
-}
-
-/* =======================
-   Footer
-======================= */
+/* Footer */
 footer {
-    background-color: #ff6f00;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 20px;
+  background: #e65100;
+  color: white;
+  margin-top: 30px;
 }
 
-/* =======================
-   Responsive Adjustments
-======================= */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .sneaker-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .sneaker-image-container,
-    .sneaker-image-container img {
-        width: 200px !important;
-        height: 200px !important;
-    }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
 }
-
-@media (max-width: 480px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        margin: 5px 0;
-    }
-
-    .sneaker-image-container,
-    .sneaker-image-container img {
-        width: 150px !important;
-        height: 150px !important;
-    }
-}
-
-
