@@ -5,6 +5,8 @@
 
 
 
+
+
 /* Global Styles */
 body {
   margin: 0;
@@ -55,7 +57,8 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-  background: url('images/hero-banner.jpg') center/cover no-repeat;
+  background: linear-gradient(to right, #ff8c42, #ff6f00),
+              url('images/hero-banner.jpg') center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
@@ -90,27 +93,30 @@ nav a:hover::after {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
 }
-
 .product-card h3 {
   font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
 }
 
-/* Product Images - 250x250 */
-.product-images {
+/* Product Images - 250x250 for ALL */
+.product-images,
+.product-card {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }
-.product-images img {
-  width: 250px;
-  height: 250px;
+.product-images img,
+.product-card img {
+  width: 250px !important;
+  height: 250px !important;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.product-images img:hover {
+.product-images img:hover,
+.product-card img:hover {
   transform: scale(1.08) rotate(1deg);
   box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
@@ -123,6 +129,7 @@ nav a:hover::after {
 .price {
   font-weight: bold;
   color: #ff6f00;
+  font-size: 1.1rem;
 }
 .availability {
   font-style: italic;
@@ -168,4 +175,17 @@ footer {
   text-align: center;
   padding: 15px;
   margin-top: 20px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  nav a {
+    margin: 0 8px;
+  }
 }
