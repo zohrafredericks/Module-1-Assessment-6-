@@ -14,24 +14,33 @@
 
   
 
+/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff8f0;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #fff8f0;
     color: #333;
 }
 
 header {
+    text-align: center;
+    padding: 20px;
     background-color: #ff6f00;
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-header h1 { margin: 0; font-size: 2.5em; }
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
 
+header p {
+    margin: 5px 0 0 0;
+}
+
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
@@ -39,46 +48,61 @@ nav {
     padding: 10px 0;
 }
 
-nav a.nav-link {
+nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
     margin: 0 15px;
-    font-weight: 600;
     padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
-    transition: all 0.3s ease;
 }
 
-nav a.nav-link:hover { background-color: #ffd180; color: #ff6f00; }
-nav a.nav-link.active { background-color: #fff3e0; color: #ff6f00; }
+nav a:hover {
+    background-color: #fff3e0;
+    color: #ff6f00;
+}
 
+nav a.active {
+    background-color: #fff3e0;
+    color: #ff6f00;
+}
+
+/* Sneaker Grid */
 .sneaker-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
+    justify-items: center;
 }
 
+/* Sneaker Block & Hover Effect */
 .sneaker-block {
-    background-color: #fff3e0;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 15px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: inherit;
 }
 
 .sneaker-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    transform: scale(1.05);
 }
 
+/* Fix all images to 250x250 */
+.sneaker,
+.sneaker-image-container img {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: cover;
+}
+
+/* Hover Effect for 3 Views */
 .sneaker-image-container {
     position: relative;
     width: 250px;
     height: 250px;
-    margin: 0 auto;
     overflow: hidden;
 }
 
@@ -86,39 +110,101 @@ nav a.nav-link.active { background-color: #fff3e0; color: #ff6f00; }
     position: absolute;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.sneaker-image-container img:nth-child(1) { opacity: 1; z-index: 3; }
-.sneaker-block:hover .sneaker-image-container img:nth-child(1) { animation: viewCycle 3s infinite; }
-.sneaker-block:hover .sneaker-image-container img:nth-child(2) { animation: viewCycle 3s infinite 1s; }
-.sneaker-block:hover .sneaker-image-container img:nth-child(3) { animation: viewCycle 3s infinite 2s; }
+.sneaker-image-container img:nth-child(2),
+.sneaker-image-container img:nth-child(3) {
+    opacity: 0;
+}
 
-@keyframes viewCycle {
-    0%, 33% { opacity: 1; }
-    34%, 100% { opacity: 0; }
+.sneaker-image-container:hover img:nth-child(1) {
+    opacity: 0;
+}
+
+.sneaker-image-container:hover img:nth-child(2) {
+    opacity: 1;
+}
+
+.sneaker-block:hover img:nth-child(3) {
+    opacity: 1;
 }
 
 .sneaker-description {
-    margin-top: 260px;
-    font-size: 1.2em;
-    color: #ff6f00;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
-main .content {
+/* Product Page */
+.product-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
+}
+
+.product-description {
+    max-width: 600px;
     text-align: center;
 }
 
+/* Buy Now Button */
+.buy-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff6f00;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.buy-button:hover {
+    background-color: #ff8f00;
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     background-color: #ff6f00;
     color: white;
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sneaker-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .sneaker-image-container,
+    .sneaker-image-container img,
+    .sneaker {
+        width: 200px !important;
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    .sneaker-image-container,
+    .sneaker-image-container img,
+    .sneaker {
+        width: 150px !important;
+        height: 150px !important;
+    }
 }
