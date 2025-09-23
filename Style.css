@@ -1,13 +1,5 @@
 
-
-
- 
-
-
-
-
-
-
+  
 
 /* =======================
    General Styles
@@ -94,7 +86,7 @@ nav a.active {
 }
 
 /* =======================
-   Fix all images to 250x250 px
+   Fix all images to 250x250 px & hover swap
 ======================= */
 .sneaker-image-container {
     width: 250px;
@@ -119,7 +111,7 @@ nav a.active {
     opacity: 0;
 }
 
-/* Hover effect */
+/* Hover effect: front -> side -> top */
 .sneaker-image-container:hover img:nth-child(1) {
     opacity: 0;
 }
@@ -132,6 +124,7 @@ nav a.active {
     opacity: 1;
 }
 
+/* Sneaker description */
 .sneaker-description {
     margin-top: 10px;
     font-weight: bold;
@@ -167,6 +160,7 @@ nav a.active {
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
 }
 
 .buy-button:hover {

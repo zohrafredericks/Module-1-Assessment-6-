@@ -1,5 +1,6 @@
 
 
+      
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,42 +10,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Contact Sneaker Town</h1>
+    </header>
 
-<header>
-    <h1>Contact Sneaker Town</h1>
-    <p>We’d love to hear from you!</p>
-</header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="product1.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="active">Contact</a>
-</nav>
+    <main class="product-page">
+        <div class="product-description">
+            <p>We’d love to hear from you! Whether it’s a question about our sneakers or an order, reach out and we’ll respond as soon as possible.</p>
 
-<div class="product-page">
-    <div class="product-description">
-        <p>Feel free to reach out to us with any questions, comments, or feedback. We aim to respond within 24 hours.</p>
+            <form action="#" method="post">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
 
-        <ul>
-            <li>Email: support@sneakertown.com</li>
-            <li>Phone: +27 123 456 7890</li>
-            <li>Address: 123 Sneaker Street, Cape Town, South Africa</li>
-        </ul>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required><br><br>
 
-        <p>You can also fill out the contact form below:</p>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea><br><br>
 
-        <form>
-            <input type="text" name="name" placeholder="Your Name" required><br><br>
-            <input type="email" name="email" placeholder="Your Email" required><br><br>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br><br>
-            <button type="submit" class="buy-button">Send Message</button>
-        </form>
-    </div>
-</div>
+                <button type="submit" class="buy-button">Send Message</button>
+            </form>
+        </div>
+    </main>
 
-<footer>
-    &copy; 2025 Sneaker Town. All rights reserved.
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Sneaker Town. All rights reserved.</p>
+    </footer>
 </body>
 </html>
