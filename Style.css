@@ -10,140 +10,115 @@
 
 
 
- 
 
 
-/* -------------------- General Page Styling -------------------- */
+  
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fff8f0; /* Soft cream background */
+    background-color: #fff8f0;
     margin: 0;
     padding: 0;
     color: #333;
 }
 
-/* -------------------- Header Styling -------------------- */
 header {
-    background-color: #ff6f00; /* Bright orange */
+    background-color: #ff6f00;
     color: white;
     text-align: center;
     padding: 20px 0;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
+header h1 { margin: 0; font-size: 2.5em; }
 
-header p {
-    margin: 5px 0 0 0;
-    font-size: 1.2em;
-}
-
-/* -------------------- Navigation Bar -------------------- */
 nav {
     display: flex;
     justify-content: center;
-    background-color: #ff8f00; /* Deep orange */
+    background-color: #ff8f00;
     padding: 10px 0;
 }
 
-nav a {
+nav a.nav-link {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-nav a:hover {
-    color: #ffd180;
-    text-shadow: 0 0 5px #fff;
-}
+nav a.nav-link:hover { background-color: #ffd180; color: #ff6f00; }
+nav a.nav-link.active { background-color: #fff3e0; color: #ff6f00; }
 
-/* -------------------- Sneaker Grid -------------------- */
 .sneaker-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
-/* Individual Sneaker Block */
-.sneaker-grid > div {
-    background-color: #fff3e0; /* Light energetic background */
+.sneaker-block {
+    background-color: #fff3e0;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 250px;
     text-align: center;
     padding: 15px;
+    overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.sneaker-grid > div:hover {
+.sneaker-block:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
-/* Sneaker Images */
-.sneaker {
+.sneaker-image-container {
+    position: relative;
     width: 250px;
     height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-/* Sneaker Description */
+.sneaker-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sneaker-image-container img:nth-child(1) { opacity: 1; z-index: 3; }
+.sneaker-block:hover .sneaker-image-container img:nth-child(1) { animation: viewCycle 3s infinite; }
+.sneaker-block:hover .sneaker-image-container img:nth-child(2) { animation: viewCycle 3s infinite 1s; }
+.sneaker-block:hover .sneaker-image-container img:nth-child(3) { animation: viewCycle 3s infinite 2s; }
+
+@keyframes viewCycle {
+    0%, 33% { opacity: 1; }
+    34%, 100% { opacity: 0; }
+}
+
 .sneaker-description {
-    margin: 10px 0 5px 0;
+    margin-top: 260px;
     font-size: 1.2em;
     color: #ff6f00;
 }
 
-/* -------------------- Buttons -------------------- */
-button {
-    background-color: #ff6f00;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
+main .content {
+    padding: 20px;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #ff8f00;
-}
-
-/* -------------------- Footer -------------------- */
 footer {
     background-color: #ff6f00;
     color: white;
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
-}
-
-/* -------------------- Table Styling -------------------- */
-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ff8f00;
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #ffd180;
-}
-
-tr:nth-child(even) {
-    background-color: #fff3e0;
 }
