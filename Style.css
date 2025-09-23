@@ -6,14 +6,13 @@
 
 
 
- 
 
 
 /* =======================
    General Styles
 ======================= */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff8f0;
@@ -30,11 +29,13 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.8em;
 }
 
 header p {
     margin: 5px 0 0 0;
+    font-size: 1.2em;
+    color: #fffbe6;
 }
 
 /* =======================
@@ -50,18 +51,14 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
     margin: 0 15px;
     padding: 5px 10px;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 5px;
 }
 
-nav a:hover {
-    background-color: #fff3e0;
-    color: #ff6f00;
-}
-
+nav a:hover,
 nav a.active {
     background-color: #fff3e0;
     color: #ff6f00;
@@ -73,7 +70,7 @@ nav a.active {
 .sneaker-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
     padding: 20px;
     justify-items: center;
 }
@@ -91,19 +88,18 @@ nav a.active {
 
 .sneaker-block:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 /* =======================
-   Sneaker Images
+   Fix all images & hover effect
 ======================= */
 .sneaker-image-container {
     width: 250px;
     height: 250px;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-radius: 20px; /* Rounded corners */
 }
 
 .sneaker-image-container img {
@@ -113,16 +109,17 @@ nav a.active {
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.5s ease-in-out;
+    border-radius: 20px;
+    transition: transform 0.3s, opacity 0.5s ease-in-out;
 }
 
-/* Hide side and top images initially */
+/* Hide side and top images initially for product pages */
 .sneaker-image-container img:nth-child(2),
 .sneaker-image-container img:nth-child(3) {
     opacity: 0;
 }
 
-/* Hover effect: front -> side */
+/* Hover effects for product pages */
 .sneaker-image-container:hover img:nth-child(1) {
     opacity: 0;
 }
@@ -131,31 +128,21 @@ nav a.active {
     opacity: 1;
 }
 
-/* Sneaker name hover effect */
-.sneaker1 { color: #0b3d91; }  /* White, Blue, Mustard */
-.sneaker2 { color: #d32f2f; }  /* White, Black, Red */
-.sneaker3 { color: #00796b; }  /* Beige, Blue, Black */
-.sneaker4 { color: #fbc02d; }  /* Yellow */
-.sneaker5 { color: #1976d2; }  /* Blue */
-.sneaker6 { color: #ffffff; }  /* White */
-
-.sneaker1:hover,
-.sneaker2:hover,
-.sneaker3:hover,
-.sneaker4:hover,
-.sneaker5:hover,
-.sneaker6:hover {
-    text-decoration: underline;
-    font-size: 1.2em;
+.sneaker-block:hover img:nth-child(3) {
+    opacity: 1;
 }
 
-/* =======================
-   Product Description
-======================= */
+/* Sneaker description text */
 .sneaker-description {
     margin-top: 10px;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    color: #ff6f00;
+    transition: color 0.3s;
+}
+
+.sneaker-block:hover .sneaker-description {
+    color: #ff3d00;
 }
 
 /* =======================
@@ -172,6 +159,25 @@ nav a.active {
 .product-description {
     max-width: 600px;
     text-align: center;
+    font-size: 1.1em;
+}
+
+/* Product info table */
+.product-description table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.product-description th,
+.product-description td {
+    padding: 8px 12px;
+    border: 1px solid #ff8f00;
+}
+
+.product-description th {
+    background-color: #fff3e0;
+    color: #ff6f00;
 }
 
 /* =======================
@@ -234,5 +240,9 @@ footer {
     .sneaker-image-container img {
         width: 150px !important;
         height: 150px !important;
+    }
+
+    .sneaker-description {
+        font-size: 1em;
     }
 }
