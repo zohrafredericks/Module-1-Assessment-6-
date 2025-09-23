@@ -13,149 +13,145 @@
 
 
 
-
-
-/* Reset default styles */
-* {
-    box-sizing: border-box;
+/* =========================
+   GENERAL STYLES
+========================= */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff8f0;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Body background */
-body {
-    background-color: #fff8f0;
-    color: #333;
-}
-
-/* Header */
-header {
+h1, h2, h3 {
+    color: #ff6600;
     text-align: center;
-    padding: 20px 0;
-    background-color: #ff7043; /* bright orange */
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin: 10px 0;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-/* Navigation bar */
+/* =========================
+   NAVIGATION BAR
+========================= */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    background-color: #ff5722; /* deep orange */
+    background-color: #ff6600;
     padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #ff8a65;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    color: #fff8f0;
+    text-shadow: 0 0 5px #fff;
 }
 
-nav a.active {
-    text-decoration: underline;
+/* =========================
+   BUTTONS
+========================= */
+button, .btn {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
 }
 
-/* Sneaker grid */
+button:hover, .btn:hover {
+    background-color: #ff8533;
+}
+
+/* =========================
+   SNEAKER GRID CONTAINER
+========================= */
 .sneaker-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 30px;
-    max-width: 1200px;
-    margin: auto;
+    padding: 20px;
+    justify-items: center;
 }
 
-/* Individual sneaker block */
-.sneaker-block {
-    background-color: #fff3e0; /* light energetic background */
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.sneaker-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-}
-
-/* Image container for hover effect */
+/* =========================
+   SNEAKER IMAGE CONTAINER
+========================= */
 .sneaker-image-container {
-    position: relative;
     width: 250px;
     height: 250px;
-    margin: 0 auto 10px auto;
+    position: relative;
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff3e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.sneaker-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   SNEAKER IMAGES
+========================= */
 .sneaker-image-container img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
     transition: opacity 0.3s ease;
 }
 
-/* Only show the first image by default */
-.sneaker-image-container img:nth-child(1) {
-    opacity: 1;
-    z-index: 3;
-}
-
-.sneaker-image-container img:nth-child(2),
-.sneaker-image-container img:nth-child(3) {
-    opacity: 0;
-    z-index: 2;
-}
-
-/* Hover effect: show second image, then third */
-.sneaker-block:hover .sneaker-image-container img:nth-child(1) {
-    opacity: 0;
-}
-
-.sneaker-block:hover .sneaker-image-container img:nth-child(2) {
-    opacity: 1;
-}
-
-.sneaker-block:hover .sneaker-image-container img:nth-child(3) {
-    opacity: 0;
-}
-
-/* Sneaker description */
-.sneaker-description {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* Footer */
-footer {
+/* =========================
+   SNEAKER NAMES
+========================= */
+.sneaker-name {
     text-align: center;
-    padding: 20px 0;
-    background-color: #ff7043;
-    color: white;
-    margin-top: 40px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #333;
 }
+
+/* =========================
+   TABLES (PRODUCT INFO)
+========================= */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff3e0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ffcc99;
+    text-align: left;
+}
+
+table th {
+    background-color: #ffb366;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #ffe6cc;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color:
