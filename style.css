@@ -1,6 +1,5 @@
 
-
- /* --- Import Google Fonts --- */
+/* --- Import Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;600&display=swap');
 
 /* --- General reset --- */
@@ -44,7 +43,7 @@ nav a:hover {
 }
 
 /* --- Product Grid --- */
-.product-grid, .sneaker-grid {
+.product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
@@ -52,7 +51,7 @@ nav a:hover {
 }
 
 /* --- Product Card --- */
-.product-card, .sneaker-card {
+.product-card {
   background: #fff3e0;
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -61,36 +60,62 @@ nav a:hover {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card:hover, .sneaker-card:hover {
+.product-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
 /* --- Sneaker Images --- */
-.product-card img, .sneaker-card img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
+.product-card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card img:hover, .sneaker-card img:hover {
+.product-card img:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   cursor: pointer;
 }
 
 /* --- Sneaker Names --- */
-.product-card h2, .sneaker-card h2 {
+.product-card h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   margin: 15px 0 8px;
   transition: color 0.3s;
 }
 
-.product-card h2:hover, .sneaker-card h2:hover {
+.product-card h2:hover {
   color: #ff6f00;
+}
+
+/* --- Price --- */
+.product-card .price {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* --- Buy Button --- */
+.buy-btn {
+  background-color: #ff7043;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.buy-btn:hover {
+  background-color: #e64a19;
+  transform: scale(1.05);
 }
 
 /* --- Product Table --- */
@@ -119,26 +144,6 @@ footer {
   background: #e65100;
   color: white;
   margin-top: 30px;
-}
-
-/* --- Buy Button --- */
-.buy-btn {
-  background-color: #ff7043;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.buy-btn:hover {
-  background-color: #e64a19;
-  transform: scale(1.05);
 }
 
 /* --- Checkout Page --- */
@@ -175,11 +180,11 @@ footer {
     gap: 10px;
   }
 
-  .product-grid, .sneaker-grid {
+  .product-grid {
     grid-template-columns: 1fr;
   }
 
-  .product-card, .sneaker-card {
+  .product-card {
     padding: 10px;
   }
 
@@ -187,57 +192,6 @@ footer {
     margin: 30px 20px;
     padding: 20px;
   }
-  
+
   .checkout-container img {
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .checkout-container img {
-    max-width: 150px;
-  }
-  
-  .checkout-container .price {
-    font-size: 1.1rem;
-  }
-}
-
-/* --- Flip Card Styles for Product Pages Only --- */
-.flip-card {
-  perspective: 1000px;
-  width: 100%;
-  height: 250px;
-  margin-bottom: 15px;
-  position: relative;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-
-.flip-card-front,
-.flip-card-back,
-.flip-card-back2 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px;
-  backface-visibility: hidden;
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.sneaker-card:hover .flip-card-inner {
-  animation: rotateSneaker 3s infinite linear;
-}
-
-@keyframes rotateSneaker {
-  0% { transform: rotateY(0deg); }
-  33% { transform: rotateY(120deg); }
-  66% { transform: rotateY(240deg); }
-  100% { transform: rotateY(360deg); }
-}
+    max
