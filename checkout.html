@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Sneaker Town</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Checkout</h1>
+  </header>
+
+  <main class="checkout-container">
+    <img id="sneaker-img" src="" alt="Sneaker Image">
+    <h2 id="sneaker-name"></h2>
+    <p class="price" id="sneaker-price"></p>
+    <p>Thank you for choosing Sneaker Town!</p>
+    <p>This is a make-believe checkout page. 😊</p>
+    <p>Please imagine entering your payment details here.</p>
+
+    <a href="index.html" class="buy-btn">Back to Home</a>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const price = params.get('price');
+    const img = params.get('img');
+
+    document.getElementById('sneaker-name').textContent = name;
+    document.getElementById('sneaker-price').textContent = price;
+    document.getElementById('sneaker-img').src = img;
+    document.getElementById('sneaker-img').alt = name;
+  </script>
+</body>
+</html>
